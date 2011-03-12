@@ -3,6 +3,15 @@
 " Author:   Patrick Brisbin <me@pbrisbin.com>
 " License:  as-is
 
+if !exists("main_syntax")
+  if version < 600
+    syntax clear
+  elseif exists("b:current_syntax")
+    finish
+  endif
+  let main_syntax = 'hamlet'
+endif
+
 " normal double-quoted strings
 syn match hmString contained /"[^"]*"/ contains=hmVar,hmExp
 hi def link hmString String
@@ -34,3 +43,8 @@ hi def link hmFunc Function
 " i like to show trailing spaces for convenience
 syn match hmTrail /  *$/
 hi def link hmTrail Error
+
+" embedded <script> tags
+syn include @hmJavaScript syntax/javascript.vim
+unlet b:current_syntax
+syn region javaScript start=+<script[^>]*>+ keepend end=+</script>+ contains=@hmJavaScript,hmTmpl,hmVar,hmExp,hmFunc
