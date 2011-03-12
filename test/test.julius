@@ -1,0 +1,10 @@
+// works
+function foo() {
+  var x = #{x $ f "x"}
+
+  $.ajax("someurl", function(data) {
+    // do callback
+  });
+
+  alert("some alert");
+}

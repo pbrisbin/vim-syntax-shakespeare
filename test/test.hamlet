@@ -1,0 +1,29 @@
+\<!DOCTYPE html>
+<html>
+  <head>
+    <title>My #{title}
+
+  <body>
+    <p>
+      This works
+
+    ^{template}
+
+    <p>
+      go to
+      <a href="@{RouteR}">here
+
+    <script>
+      // however it fails on embedded js
+      var x = foo;
+
+      function doit(_x) {
+        doit(_x);
+      }
+
+      // hmVars still work here
+      $forall x <- xs
+        alart(#{x})
+
+      doit(x);
+    </script>
