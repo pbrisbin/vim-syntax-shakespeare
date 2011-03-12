@@ -3,13 +3,14 @@
 " Author:   Patrick Brisbin <me@pbrisbin.com>
 " License:  as-is
 
-if exists("b:current_syntax")
-  unlet b:current_syntax
-endif
-
 syn include @hmQuasi syntax/hamlet.vim
+unlet b:current_syntax
+
 syn include @csQuasi syntax/css.vim " not implemented yet
+unlet b:current_syntax
+
 syn include @jsQuasi syntax/julius.vim
+unlet b:current_syntax
 
 syn region hmBlock start='\[\$\?x\?hamlet|*' end='|\]' contains=@hmQuasi
 syn region csBlock start='\[\$\?cassius|*' end='|\]'   contains=@csQuasi

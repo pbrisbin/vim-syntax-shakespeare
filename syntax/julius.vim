@@ -12,7 +12,6 @@ if !exists("main_syntax")
   let main_syntax = 'julius'
 endif
 
-
 " julius is just javascript with variable interpolation
 :runtime! syntax/javascript.vim
 unlet b:current_syntax
@@ -22,3 +21,5 @@ hi def link jsString String
 
 syn match jsVar /\#{[^}]*}/ contains=jsString,hsVarSym,hsConSym
 hi def link jsVar Structure
+
+let b:current_syntax = 'julius'

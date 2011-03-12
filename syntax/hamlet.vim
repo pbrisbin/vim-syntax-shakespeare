@@ -44,7 +44,14 @@ hi def link hmFunc Function
 syn match hmTrail /  *$/
 hi def link hmTrail Error
 
-" embedded <script> tags
-syn include @hmJavaScript syntax/javascript.vim
+" embedded html
+syn include @HTML syntax/html.vim
 unlet b:current_syntax
-syn region javaScript start=+<script[^>]*>+ keepend end=+</script>+ contains=@hmJavaScript,hmTmpl,hmVar,hmExp,hmFunc
+syn match hmHTML /\\<[^>]\+>/ contains=@HTML
+
+" embedded javascript
+syn include @JavaScript syntax/javascript.vim
+unlet b:current_syntax
+syn region hmJavaScript start=+<script[^>]*>+ keepend end=+</script>+ contains=@JavaScript,hmTmpl,hmVar,hmExp,hmFunc
+
+let b:current_syntax='hamlet'
