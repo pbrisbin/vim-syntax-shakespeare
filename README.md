@@ -1,13 +1,14 @@
 # Html Template Syntax
 
-A (so far very small) collection of vim syntax files for Html working in 
-haskell's Html templating languages (hamlet, cassius, etc).
+A (so far very small) collection of vim syntax files for working in 
+haskell's various html templating languages (hamlet, cassius, etc).
 
 The idea is to provide both a $language.vim file to for external 
 templates as well as one monolithic haskell.vim that can be placed in 
-your after/syntax directory to properly highlight quasi-quoted blocks.
+your after/syntax directory to properly highlight quasi-quoted blocks 
+inside a haskell source file.
 
-### So far
+### So far:
 
 haskell.vim with support for quasi-quoted hamlet.
 
