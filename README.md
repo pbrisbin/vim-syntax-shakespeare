@@ -13,7 +13,7 @@ haskell.vim with support for quasi-quoted hamlet.
 
 ![Screenshot](http://pbrisbin.com/static/fileshare/hamlet.png)
 
-# Todo:
+### Todo:
 
 * hamlet.vim
 * cassius.vim
