@@ -11,9 +11,8 @@ hi def link hmString String
 syn match hmKey /^\s*<[^>\n]*[>\n]/ contains=hmAttr,hmString
 hi def link hmKey Identifier
 
-" !something, #something, .something
+" #something and .something
 syn match hmAttr contained /\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmExp
-syn match hmAttr contained /^\s*\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmExp
 hi def link hmAttr Operator
 
 " ^{template}
