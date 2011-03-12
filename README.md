@@ -10,17 +10,17 @@ a haskell source file.
 
 ### So far:
 
-haskell.vim with support for quasi-quoted hamlet.
+* haskell.vim with hamlet support
+* hamlet.vim
 
 ![Screenshot](http://pbrisbin.com/static/fileshare/hamlet.png)
 
 ### Todo:
 
-* hamlet.vim
 * cassius.vim
 * julius.vim
 * update haskell.vim with support for these
-* update hamlet to highlight \<script> stuff as julius
+* update hamlet to highlight \<script> stuff as javascript
 
 ### Call for contributors
 
@@ -28,7 +28,3 @@ My site doesn't use any external templates, so only the haskell.vim is
 really useful to me. If anyone would like to tackle the others (cassius 
 and julius can really just be tweaked versions of the standard css and 
 javascript syntax files), please do.
-
-Anyone with greater vim knowledge, please share. Is there a way to 
-create the $language.vim files then reference them in a regex-contained 
-way in haskell.vim?
