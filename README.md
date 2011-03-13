@@ -3,24 +3,20 @@
 A collection of vim syntax files for working in haskell's various html 
 templating languages (hamlet, cassius, and julius).
 
-The idea is to provide both a `syntax/$language.vim` file for external 
-templates as well as include them in an `after/syntax/haskell.vim` to 
-properly highlight quasi-quoted blocks inside a haskell source file.
+Provided is each `syntax/$language.vim` file for external templates as 
+well as an `after/syntax/haskell.vim` which will properly highlight 
+quasi-quoted blocks inside a haskell source file.
 
-To use, just copy the contents of `./syntax` and `./after/syntax` into 
-your `~/.vim/syntax` and `~/.vim/after/syntax` directories.
+To use, just copy (or link) the contents of `./syntax` and 
+`./after/syntax` into your `~/.vim/syntax` and `~/.vim/after/syntax` 
+directories.
 
-### So far:
+### Quirks
 
-* hamlet.vim
-* julius.vim
-* embedded hamlet in haskell.vim
-* embedded julius in haskell.vim
-
-### Todo:
-
-* cassius
-* there are some quirks with embedded julius
+* font-size works in test.cassius but not test.hs
+* #{someVar} works in test.julius but not test.hs
+* javascript inside a script tag is difficult due to the lack of a 
+  \</script> region-end
 
 ### Screenshots
 
