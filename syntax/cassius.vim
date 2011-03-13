@@ -12,6 +12,18 @@ if !exists("main_syntax")
   let main_syntax = 'cassius'
 endif
 
+if version < 508
+  command! -nargs=+ CassiusHiLink hi link <args>
+else
+  command! -nargs=+ CassiusHiLink hi def link <args>
+endif
+
 " todo:
 
+delcommand CassiusHiLink
+
 let b:current_syntax = 'cassius'
+
+if main_syntax == 'cassius'
+  unlet main_syntax
+endif
