@@ -29,14 +29,17 @@ syn match hmKey /^\s*<[^>\n]*[>\n]/ contains=hmAttr,hmString
 " #something and .something
 syn match hmAttr contained /\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmExp
 
+" haskell operators that are valid in hamlet expressions
+syn match hmHsOp contained /\(\$\|\.\)/
+
 " ^{template}
-syn match hmTmpl /\^{[^}]*}/ contains=hmString,hsVarSym,hsConSym " values from syntax/haskell.vim
+syn match hmTmpl /\^{[^}]*}/ contains=hmString,hmHsOp
 
 " #{variable}
-syn match hmVar /\#{[^}]*}/ contains=hmString,hsVarSym,hsConSym
+syn match hmVar /\#{[^}]*}/ contains=hmString,hsHsOp
 
 " @{RoutR}
-syn match hmExp /@{[^}]*}/ contains=hmString,hsVarSym,hsConSym
+syn match hmExp /@{[^}]*}/ contains=hmString,hmHsOp
 
 " $maybe, $forall, $if, $else
 syn match hmFunc /\$\(maybe\|nothing\|forall\|if\|elseif\|else\)/
@@ -59,6 +62,7 @@ syn match hmHTML /\\<[^>]\+>/ contains=@HTML
 
 HamletHiLink hmString String
 HamletHiLink hmKey    Identifier
+HamletHiLink hmHsOp   Operator
 HamletHiLink hmAttr   Operator
 HamletHiLink hmTmpl   Number
 HamletHiLink hmVar    Structure
