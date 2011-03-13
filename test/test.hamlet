@@ -14,16 +14,15 @@
       <a href="@{RouteR}">here
 
     <script>
-      // however it fails on embedded js
       var x = foo;
 
       function doit(_x) {
         doit(_x);
       }
 
-      // hmVars still work here
       $forall x <- xs
-        alart(#{x})
+        alert(#{x})
 
       doit(x);
-    </script>
+
+    \<span class="x">Some raw Html</span>

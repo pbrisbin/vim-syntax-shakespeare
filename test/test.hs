@@ -1,58 +1,51 @@
--------------------------------------------------------------------------------
---
 -- Note, not a valid haskell file
---
--------------------------------------------------------------------------------
 module Test where
 
+-- Some valid haskell source
+f :: String -> String
 f = x $ d . g h `elem` foo
 
--- | Comment
-addJulius [$julius|
-    function x(foo) {
-        var x = #{x $ "foo"}
-    }
+-- C
+addCassius [$cassius|
+    #id
+        font-size: 100%
+
+    .#{myclass}
+        background-color: #ffffff
+
     |]
 
--- | All tags
-getTagsR :: Handler RepHtml
-getTagsR = do
-    defaultLayout $ do
-        setTitle $ toHtml $ Settings.titlePrefix ++ "All Tags"
-        addKeywords $ map fst tagGroups
+-- J
+addJulius [$julius|
+    function x(foo) {
+        var x = #{x $ "foo"};
+    }
 
-        [$hamlet|
-            <header>
-                <h1>All Tags
+    x(1.0);
+    |]
 
-            <article .fullpage>
-                <div id="accordion">
-                    $forall tagGroup <- tagGroups
-                        ^{addTagGroup tagGroup}
+-- H
+addHamlet [$hamlet|
+    <header>
+        <h1>All Tags
 
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
-            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js">
-            <script>
-                $(function() {
-                    $("#accordion").accordion({
-                        collapsible: true,
-                        autoHeight:  false,
-                        active:      false
-                    });
-                });
+    <article .fullpage>
+        <div id="accordion">
+            $forall tagGroup <- tagGroups
+                ^{addTagGroup tagGroup}
 
-            |]
-    where
-        addTagGroup :: TagGroup -> Widget ()
-        addTagGroup tg = do
-            let tag   = fst tg
-            let posts = snd tg
-            let len   = doShow $ length posts
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js">
+    <script>
+        $(function() {
+            $("#accordion").accordion({
+                collapsible: true,
+                autoHeight:  false,
+                active:      false
+            });
+        });
 
-            [$hamlet|
-                <h3>#{proper tag} 
-                    <span .post_count>- #{len}
-                <div .hidden>
-                    $forall post <- posts
-                        ^{addPostBlock post}
-                |]
+    <p>
+        Some text
+
+    |]
