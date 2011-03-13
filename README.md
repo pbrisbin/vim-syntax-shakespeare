@@ -11,10 +11,12 @@ To use, just copy (or link) the contents of `./syntax` and
 `./after/syntax` into your `~/.vim/syntax` and `~/.vim/after/syntax` 
 directories.
 
+Be sure to set the filetypes by extension in your `~/.vimrc`.
+
 ### Quirks
 
 * font-size works in test.cassius but not test.hs
-* #{someVar} works in test.julius but not test.hs
+* \#{someVar} works in test.julius but not test.hs
 * javascript inside a script tag is difficult due to the lack of a 
   \</script> region-end
 
