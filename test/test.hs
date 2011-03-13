@@ -1,18 +1,21 @@
 -- Note, not a valid haskell file
 module Test where
 
--- Some valid haskell source
+-- H
 f :: String -> String
 f = x $ d . g h `elem` foo
 
 -- C
 addCassius [$cassius|
     #id
+        color: #ffffff
         font-size: 100%
+
+    .class
+        background-color:
 
     .#{myclass}
         background-color: #ffffff
-
     |]
 
 -- J
@@ -47,5 +50,4 @@ addHamlet [$hamlet|
 
     <p>
         Some text
-
     |]

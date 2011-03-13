@@ -12,12 +12,6 @@ if !exists("main_syntax")
   let main_syntax = 'julius'
 endif
 
-if version < 508
-  command! -nargs=+ JuliusHiLink hi link <args>
-else
-  command! -nargs=+ JuliusHiLink hi def link <args>
-endif
-
 " julius is just javascript with variable interpolation
 :runtime! syntax/javascript.vim
 unlet b:current_syntax
@@ -26,11 +20,17 @@ syn match jsString /"[^"]*"/ contains=jsVar
 syn match jsVar /\#{[^}]*}/ contains=jsString,jsHsOp
 syn match jsHsOp contained /\(\$\|\.\)/
 
-JuliusHiLink jsString String
-JuliusHiLink jsVar    Structure
-JuliusHiLink jsHsOp   Operator
+if version < 508
+  command! -nargs=+ HiLink hi link <args>
+else
+  command! -nargs=+ HiLink hi def link <args>
+endif
 
-delcommand JuliusHiLink
+HiLink jsString String
+HiLink jsVar    Structure
+HiLink jsHsOp   Operator
+
+delcommand HiLink
 
 let b:current_syntax = 'julius'
 

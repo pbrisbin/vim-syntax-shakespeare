@@ -7,23 +7,31 @@
 let old_syntax = b:current_syntax
 unlet b:current_syntax
 
-syn include @hmQuasi syntax/hamlet.vim
+syn include @hamlet syntax/hamlet.vim
 unlet b:current_syntax
 
-" note: not implemented yet
-syn include @csQuasi syntax/css.vim 
+syn include @cassius syntax/cassius.vim 
 unlet b:current_syntax
 
-syn include @jsQuasi syntax/julius.vim
+syn include @julius syntax/julius.vim
 unlet b:current_syntax
 
-syn region hmBlock start=/\[\$\?x\?hamlet|/ keepend end=/|\]/ contains=@hmQuasi
-syn region csBlock start=/\[\$\?cassius|/   keepend end=/|\]/ contains=@csQuasi
-syn region jsBlock start=/\[\$\?julius|/    keepend end=/|\]/ contains=@jsQuasi
+syn region hmBlock matchgroup=quasiQuote start=/\[\$\?x\?hamlet|/ end=/|\]/ contains=@hamlet
+syn region csBlock matchgroup=quasiQuote start=/\[\$\?cassius|/   end=/|\]/ contains=@cassius
+syn region jsBlock matchgroup=quasiQuote start=/\[\$\?julius|/    end=/|\]/ contains=@julius
 
-hi def link hmBlock Boolean
-hi def link csBlock Boolean
-hi def link jsBlock Boolean
+if version < 508
+  command! -nargs=+ HiLink hi link <args>
+else
+  command! -nargs=+ HiLink hi def link <args>
+endif
+
+" note: csBlock purposely left out
+HiLink quasiQuote Boolean
+HiLink hmBlock    StorageClass
+HiLink jsBlock    StorageClass
+
+delcommand HiLink
 
 " restore current syntax value
 let b:current_syntax = old_syntax

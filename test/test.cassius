@@ -1,0 +1,18 @@
+body
+  color:     #ffffff
+  font-size: 200%
+
+a:link
+  font-size:        200%
+  color:            #333333
+  background-color: #909090
+
+#someId
+  color: #ffffff
+
+.someclass
+  color: #ffffff
+
+##{myId "someid"}
+  height: 12px
+  width:  100%
