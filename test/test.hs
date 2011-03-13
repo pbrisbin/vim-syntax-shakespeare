@@ -1,36 +1,37 @@
--- Note, not a valid haskell file
 module Test where
 
--- H
-f :: String -> String
-f = x $ d . g h `elem` foo
+qsort :: (Ord a) => [a] -> [a]
+qsort []     = []
+qsort (x:xs) = (qsort $ filter (< x) xs) ++ [x] ++ (qsort $ filter (>= x) xs)
 
--- C
 addCassius [$cassius|
     #id
+        /* comment */
         color: #ffffff
         font-size: 100%
 
     .class
         background-color:
 
-    .#{myclass}
+    .#{classAsVariable}
         background-color: #ffffff
     |]
 
--- J
 addJulius [$julius|
-    function x(foo) {
-        var x = #{x $ "foo"};
+    // comment
+    function f(_arg) {
+        var g = _arg + #{f . g $ h};
+        alert(g);
     }
 
-    x(1.0);
+    f(1.0);
     |]
 
--- H
 addHamlet [$hamlet|
     <header>
         <h1>All Tags
+
+    \<!-- is this valid hamlet? -->
 
     <article .fullpage>
         <div id="accordion">
@@ -39,7 +40,8 @@ addHamlet [$hamlet|
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js">
-    <script>
+
+    <script type="text/javascript">
         $(function() {
             $("#accordion").accordion({
                 collapsible: true,
@@ -49,5 +51,5 @@ addHamlet [$hamlet|
         });
 
     <p>
-        Some text
+        Footer info
     |]
