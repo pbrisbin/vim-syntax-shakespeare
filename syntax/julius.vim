@@ -23,11 +23,12 @@ endif
 unlet b:current_syntax
 
 syn match jsString /"[^"]*"/ contains=jsVar
-
-syn match jsVar /\#{[^}]*}/ contains=jsString,hsVarSym,hsConSym
+syn match jsVar /\#{[^}]*}/ contains=jsString,jsHsOp
+syn match jsHsOp contained /\(\$\|\.\)/
 
 JuliusHiLink jsString String
 JuliusHiLink jsVar    Structure
+JuliusHiLink jsHsOp   Operator
 
 delcommand JuliusHiLink
 
