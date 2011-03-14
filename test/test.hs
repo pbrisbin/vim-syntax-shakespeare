@@ -33,6 +33,7 @@ addHamlet [$hamlet|
 
     \<!-- is this valid hamlet? -->
 
+    <p .something #{what}
     <article .fullpage>
         <div id="accordion">
             $forall tagGroup <- tagGroups

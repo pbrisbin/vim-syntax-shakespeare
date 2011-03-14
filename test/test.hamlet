@@ -9,7 +9,7 @@
 
     ^{template}
 
-    <p>
+    <p .something #{what}
       go to
       <a href="@{RouteR}">here
 
