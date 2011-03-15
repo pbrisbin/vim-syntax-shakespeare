@@ -5,7 +5,7 @@ qsort []     = []
 qsort (x:xs) = (qsort $ filter (< x) xs) ++ [x] ++ (qsort $ filter (>= x) xs)
 
 addCassius [$cassius|
-    #id
+    body
         /* comment */
         color: #ffffff
         font-size: 100%
