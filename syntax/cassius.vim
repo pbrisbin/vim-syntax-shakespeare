@@ -19,155 +19,155 @@ endif
 
 syn case ignore
 
-syn keyword cssTagName abbr acronym address applet area a b base
-syn keyword cssTagName basefont bdo big blockquote body br button
-syn keyword cssTagName caption center cite code col colgroup dd del
-syn keyword cssTagName dfn dir div dl dt em fieldset form frame
-syn keyword cssTagName frameset h1 h2 h3 h4 h5 h6 head hr html img i
-syn keyword cssTagName iframe img input ins isindex kbd label legend li
-syn keyword cssTagName link map menu meta noframes noscript ol optgroup
-syn keyword cssTagName option p param pre q s samp script select small
-syn keyword cssTagName span strike strong style sub sup tbody td
-syn keyword cssTagName textarea tfoot th thead title tr tt ul u var
+syn keyword csTagName abbr acronym address applet area a b base
+syn keyword csTagName basefont bdo big blockquote body br button
+syn keyword csTagName caption center cite code col colgroup dd del
+syn keyword csTagName dfn dir div dl dt em fieldset form frame
+syn keyword csTagName frameset h1 h2 h3 h4 h5 h6 head hr html img i
+syn keyword csTagName iframe img input ins isindex kbd label legend li
+syn keyword csTagName link map menu meta noframes noscript ol optgroup
+syn keyword csTagName option p param pre q s samp script select small
+syn keyword csTagName span strike strong style sub sup tbody td
+syn keyword csTagName textarea tfoot th thead title tr tt ul u var
 
 try
-syn match cssIdentifier "#[A-Za-zÀ-ÿ_@][A-Za-zÀ-ÿ0-9_@-]*"
+syn match csIdentifier "#[A-Za-zÀ-ÿ_@][A-Za-zÀ-ÿ0-9_@-]*"
 catch /^.*/
-syn match cssIdentifier "#[A-Za-z_@][A-Za-z0-9_@-]*"
+syn match csIdentifier "#[A-Za-z_@][A-Za-z0-9_@-]*"
 endtry
 
-syn match cssValueInteger "[-+]\=\d\+"
-syn match cssValueNumber "[-+]\=\d\+\(\.\d*\)\="
-syn match cssValueLength "[-+]\=\d\+\(\.\d*\)\=\(%\|mm\|cm\|in\|pt\|pc\|em\|ex\|px\)"
-syn match cssValueAngle "[-+]\=\d\+\(\.\d*\)\=\(deg\|grad\|rad\)"
-syn match cssValueTime "+\=\d\+\(\.\d*\)\=\(ms\|s\)"
-syn match cssValueFrequency "+\=\d\+\(\.\d*\)\=\(Hz\|kHz\)"
+syn match csValueInteger "[-+]\=\d\+"
+syn match csValueNumber "[-+]\=\d\+\(\.\d*\)\="
+syn match csValueLength "[-+]\=\d\+\(\.\d*\)\=\(%\|mm\|cm\|in\|pt\|pc\|em\|ex\|px\)"
+syn match csValueAngle "[-+]\=\d\+\(\.\d*\)\=\(deg\|grad\|rad\)"
+syn match csValueTime "+\=\d\+\(\.\d*\)\=\(ms\|s\)"
+syn match csValueFrequency "+\=\d\+\(\.\d*\)\=\(Hz\|kHz\)"
 
-syn match cssUnicodeRange "U+[0-9A-Fa-f?]\+"
-syn match cssUnicodeRange "U+\x\+-\x\+"
+syn match csUnicodeRange "U+[0-9A-Fa-f?]\+"
+syn match csUnicodeRange "U+\x\+-\x\+"
 
-syn keyword cssColor aqua black blue fuchsia gray green lime maroon navy olive purple red silver teal yellow
+syn keyword csColor aqua black blue fuchsia gray green lime maroon navy olive purple red silver teal yellow
 " FIXME: These are actually case-insentivie too, but (a) specs recommend using
 " mixed-case (b) it's hard to highlight the word `Background' correctly in
 " all situations
 syn case match
-syn keyword cssColor ActiveBorder ActiveCaption AppWorkspace ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightText InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLightShadow ThreeDShadow Window WindowFrame WindowText Background
+syn keyword csColor ActiveBorder ActiveCaption AppWorkspace ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightText InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLightShadow ThreeDShadow Window WindowFrame WindowText Background
 syn case ignore
 
-syn match cssColor "\<transparent\>"
-syn match cssColor "\<white\>"
-syn match cssColor "#[0-9A-Fa-f]\{3\}\>"
-syn match cssColor "#[0-9A-Fa-f]\{6\}\>"
-syn region cssFunction matchgroup=cssFunctionName start="\<\(rgb\|clip\|attr\|counter\|rect\)\s*(" end=")" oneline keepend
+syn match csColor "\<transparent\>"
+syn match csColor "\<white\>"
+syn match csColor "#[0-9A-Fa-f]\{3\}\>"
+syn match csColor "#[0-9A-Fa-f]\{6\}\>"
+syn region csFunction matchgroup=csFunctionName start="\<\(rgb\|clip\|attr\|counter\|rect\)\s*(" end=")" oneline keepend
 
-syn match cssImportant "!\s*important\>"
+syn match csImportant "!\s*important\>"
 
-syn keyword cssCommonAttr auto none inherit
-syn keyword cssCommonAttr top bottom
-syn keyword cssCommonAttr medium normal
+syn keyword csCommonAttr auto none inherit
+syn keyword csCommonAttr top bottom
+syn keyword csCommonAttr medium normal
 
-syn match cssFontProp "\<font\(-\(family\|style\|variant\|weight\|size\(-adjust\)\=\|stretch\)\)\=\>"
-syn match cssFontAttr "\<\(sans-\)\=\<serif\>"
-syn match cssFontAttr "\<small\(-\(caps\|caption\)\)\=\>"
-syn match cssFontAttr "\<x\{1,2\}-\(large\|small\)\>"
-syn match cssFontAttr "\<message-box\>"
-syn match cssFontAttr "\<status-bar\>"
-syn match cssFontAttr "\<\(\(ultra\|extra\|semi\|status-bar\)-\)\=\(condensed\|expanded\)\>"
-syn keyword cssFontAttr cursive fantasy monospace italic oblique
-syn keyword cssFontAttr bold bolder lighter larger smaller
-syn keyword cssFontAttr icon menu
-syn match cssFontAttr "\<caption\>"
-syn keyword cssFontAttr large smaller larger
-syn keyword cssFontAttr narrower wider
+syn match csFontProp "\<font\(-\(family\|style\|variant\|weight\|size\(-adjust\)\=\|stretch\)\)\=\>"
+syn match csFontAttr "\<\(sans-\)\=\<serif\>"
+syn match csFontAttr "\<small\(-\(caps\|caption\)\)\=\>"
+syn match csFontAttr "\<x\{1,2\}-\(large\|small\)\>"
+syn match csFontAttr "\<message-box\>"
+syn match csFontAttr "\<status-bar\>"
+syn match csFontAttr "\<\(\(ultra\|extra\|semi\|status-bar\)-\)\=\(condensed\|expanded\)\>"
+syn keyword csFontAttr cursive fantasy monospace italic oblique
+syn keyword csFontAttr bold bolder lighter larger smaller
+syn keyword csFontAttr icon menu
+syn match csFontAttr "\<caption\>"
+syn keyword csFontAttr large smaller larger
+syn keyword csFontAttr narrower wider
 
-syn keyword cssColorProp color
-syn match cssColorProp "\<background\(-\(color\|image\|attachment\|position\)\)\=\>"
-syn keyword cssColorAttr center scroll fixed
-syn match cssColorAttr "\<repeat\(-[xy]\)\=\>"
-syn match cssColorAttr "\<no-repeat\>"
+syn keyword csColorProp color
+syn match csColorProp "\<background\(-\(color\|image\|attachment\|position\)\)\=\>"
+syn keyword csColorAttr center scroll fixed
+syn match csColorAttr "\<repeat\(-[xy]\)\=\>"
+syn match csColorAttr "\<no-repeat\>"
 
-syn match cssTextProp "\<\(\(word\|letter\)-spacing\|text\(-\(decoration\|transform\|align\|index\|shadow\)\)\=\|vertical-align\|unicode-bidi\|line-height\)\>"
-syn match cssTextAttr "\<line-through\>"
-syn match cssTextAttr "\<text-indent\>"
-syn match cssTextAttr "\<\(text-\)\=\(top\|bottom\)\>"
-syn keyword cssTextAttr underline overline blink sub super middle
-syn keyword cssTextAttr capitalize uppercase lowercase center justify baseline sub super
+syn match csTextProp "\<\(\(word\|letter\)-spacing\|text\(-\(decoration\|transform\|align\|index\|shadow\)\)\=\|vertical-align\|unicode-bidi\|line-height\)\>"
+syn match csTextAttr "\<line-through\>"
+syn match csTextAttr "\<text-indent\>"
+syn match csTextAttr "\<\(text-\)\=\(top\|bottom\)\>"
+syn keyword csTextAttr underline overline blink sub super middle
+syn keyword csTextAttr capitalize uppercase lowercase center justify baseline sub super
 
-syn match cssBoxProp "\<\(margin\|padding\|border\)\(-\(top\|right\|bottom\|left\)\)\=\>"
-syn match cssBoxProp "\<border-\(\(\(top\|right\|bottom\|left\)-\)\=\(width\|color\|style\)\)\=\>"
-syn match cssBoxProp "\<\(width\|z-index\)\>"
-syn match cssBoxProp "\<\(min\|max\)-\(width\|height\)\>"
-syn keyword cssBoxProp width height float clear overflow clip visibility
-syn keyword cssBoxAttr thin thick both
-syn keyword cssBoxAttr dotted dashed solid double groove ridge inset outset
-syn keyword cssBoxAttr hidden visible scroll collapse
+syn match csBoxProp "\<\(margin\|padding\|border\)\(-\(top\|right\|bottom\|left\)\)\=\>"
+syn match csBoxProp "\<border-\(\(\(top\|right\|bottom\|left\)-\)\=\(width\|color\|style\)\)\=\>"
+syn match csBoxProp "\<\(width\|z-index\)\>"
+syn match csBoxProp "\<\(min\|max\)-\(width\|height\)\>"
+syn keyword csBoxProp width height float clear overflow clip visibility
+syn keyword csBoxAttr thin thick both
+syn keyword csBoxAttr dotted dashed solid double groove ridge inset outset
+syn keyword csBoxAttr hidden visible scroll collapse
 
-syn keyword cssGeneratedContentProp content quotes
-syn match cssGeneratedContentProp "\<counter-\(reset\|increment\)\>"
-syn match cssGeneratedContentProp "\<list-style\(-\(type\|position\|image\)\)\=\>"
-syn match cssGeneratedContentAttr "\<\(no-\)\=\(open\|close\)-quote\>"
-syn match cssAuralAttr "\<lower\>"
-syn match cssGeneratedContentAttr "\<\(lower\|upper\)-\(roman\|alpha\|greek\|latin\)\>"
-syn match cssGeneratedContentAttr "\<\(hiragana\|katakana\)\(-iroha\)\=\>"
-syn match cssGeneratedContentAttr "\<\(decimal\(-leading-zero\)\=\|cjk-ideographic\)\>"
-syn keyword cssGeneratedContentAttr disc circle square hebrew armenian georgian
-syn keyword cssGeneratedContentAttr inside outside
+syn keyword csGeneratedContentProp content quotes
+syn match csGeneratedContentProp "\<counter-\(reset\|increment\)\>"
+syn match csGeneratedContentProp "\<list-style\(-\(type\|position\|image\)\)\=\>"
+syn match csGeneratedContentAttr "\<\(no-\)\=\(open\|close\)-quote\>"
+syn match csAuralAttr "\<lower\>"
+syn match csGeneratedContentAttr "\<\(lower\|upper\)-\(roman\|alpha\|greek\|latin\)\>"
+syn match csGeneratedContentAttr "\<\(hiragana\|katakana\)\(-iroha\)\=\>"
+syn match csGeneratedContentAttr "\<\(decimal\(-leading-zero\)\=\|cjk-ideographic\)\>"
+syn keyword csGeneratedContentAttr disc circle square hebrew armenian georgian
+syn keyword csGeneratedContentAttr inside outside
 
-syn match cssPagingProp "\<page\(-break-\(before\|after\|inside\)\)\=\>"
-syn keyword cssPagingProp size marks inside orphans widows
-syn keyword cssPagingAttr landscape portrait crop cross always avoid
+syn match csPagingProp "\<page\(-break-\(before\|after\|inside\)\)\=\>"
+syn keyword csPagingProp size marks inside orphans widows
+syn keyword csPagingAttr landscape portrait crop cross always avoid
 
-syn keyword cssUIProp cursor
-syn match cssUIProp "\<outline\(-\(width\|style\|color\)\)\=\>"
-syn match cssUIAttr "\<[ns]\=[ew]\=-resize\>"
-syn keyword cssUIAttr default crosshair pointer move wait help
-syn keyword cssUIAttr thin thick
-syn keyword cssUIAttr dotted dashed solid double groove ridge inset outset
-syn keyword cssUIAttr invert
+syn keyword csUIProp cursor
+syn match csUIProp "\<outline\(-\(width\|style\|color\)\)\=\>"
+syn match csUIAttr "\<[ns]\=[ew]\=-resize\>"
+syn keyword csUIAttr default crosshair pointer move wait help
+syn keyword csUIAttr thin thick
+syn keyword csUIAttr dotted dashed solid double groove ridge inset outset
+syn keyword csUIAttr invert
 
-syn match cssRenderAttr "\<marker\>"
-syn match cssRenderProp "\<\(display\|marker-offset\|unicode-bidi\|white-space\|list-item\|run-in\|inline-table\)\>"
-syn keyword cssRenderProp position top bottom direction
-syn match cssRenderProp "\<\(left\|right\)\>"
-syn keyword cssRenderAttr block inline compact
-syn match cssRenderAttr "\<table\(-\(row-gorup\|\(header\|footer\)-group\|row\|column\(-group\)\=\|cell\|caption\)\)\=\>"
-syn keyword cssRenderAttr static relative absolute fixed
-syn keyword cssRenderAttr ltr rtl embed bidi-override pre nowrap
-syn match cssRenderAttr "\<bidi-override\>"
+syn match csRenderAttr "\<marker\>"
+syn match csRenderProp "\<\(display\|marker-offset\|unicode-bidi\|white-space\|list-item\|run-in\|inline-table\)\>"
+syn keyword csRenderProp position top bottom direction
+syn match csRenderProp "\<\(left\|right\)\>"
+syn keyword csRenderAttr block inline compact
+syn match csRenderAttr "\<table\(-\(row-gorup\|\(header\|footer\)-group\|row\|column\(-group\)\=\|cell\|caption\)\)\=\>"
+syn keyword csRenderAttr static relative absolute fixed
+syn keyword csRenderAttr ltr rtl embed bidi-override pre nowrap
+syn match csRenderAttr "\<bidi-override\>"
 
-syn match cssAuralProp "\<\(pause\|cue\)\(-\(before\|after\)\)\=\>"
-syn match cssAuralProp "\<\(play-during\|speech-rate\|voice-family\|pitch\(-range\)\=\|speak\(-\(punctuation\|numerals\)\)\=\)\>"
-syn keyword cssAuralProp volume during azimuth elevation stress richness
-syn match cssAuralAttr "\<\(x-\)\=\(soft\|loud\)\>"
-syn keyword cssAuralAttr silent
-syn match cssAuralAttr "\<spell-out\>"
-syn keyword cssAuralAttr non mix
-syn match cssAuralAttr "\<\(left\|right\)-side\>"
-syn match cssAuralAttr "\<\(far\|center\)-\(left\|center\|right\)\>"
-syn keyword cssAuralAttr leftwards rightwards behind
-syn keyword cssAuralAttr below level above higher
-syn match cssAuralAttr "\<\(x-\)\=\(slow\|fast\)\>"
-syn keyword cssAuralAttr faster slower
-syn keyword cssAuralAttr male female child code digits continuous
+syn match csAuralProp "\<\(pause\|cue\)\(-\(before\|after\)\)\=\>"
+syn match csAuralProp "\<\(play-during\|speech-rate\|voice-family\|pitch\(-range\)\=\|speak\(-\(punctuation\|numerals\)\)\=\)\>"
+syn keyword csAuralProp volume during azimuth elevation stress richness
+syn match csAuralAttr "\<\(x-\)\=\(soft\|loud\)\>"
+syn keyword csAuralAttr silent
+syn match csAuralAttr "\<spell-out\>"
+syn keyword csAuralAttr non mix
+syn match csAuralAttr "\<\(left\|right\)-side\>"
+syn match csAuralAttr "\<\(far\|center\)-\(left\|center\|right\)\>"
+syn keyword csAuralAttr leftwards rightwards behind
+syn keyword csAuralAttr below level above higher
+syn match csAuralAttr "\<\(x-\)\=\(slow\|fast\)\>"
+syn keyword csAuralAttr faster slower
+syn keyword csAuralAttr male female child code digits continuous
 
-syn match cssTableProp "\<\(caption-side\|table-layout\|border-collapse\|border-spacing\|empty-cells\|speak-header\)\>"
-syn keyword cssTableAttr fixed collapse separate show hide once always
+syn match csTableProp "\<\(caption-side\|table-layout\|border-collapse\|border-spacing\|empty-cells\|speak-header\)\>"
+syn keyword csTableAttr fixed collapse separate show hide once always
 
-" FIXME: This allows cssMediaBlock before the semicolon, which is wrong.
+" FIXME: This allows csMediaBlock before the semicolon, which is wrong.
 
-syn match cssPseudoClass ":\S\+" contains=cssPseudoClassId,cssUnicodeEscape
-syn keyword cssPseudoClassId contained link visited active hover focus before after left right
-syn match cssPseudoClassId contained "\<first\(-\(line\|letter\|child\)\)\=\>"
-syn region cssPseudoClassLang matchgroup=cssPseudoClassId start=":lang(" end=")" oneline
+syn match csPseudoClass ":\S\+" contains=csPseudoClassId,csUnicodeEscape
+syn keyword csPseudoClassId contained link visited active hover focus before after left right
+syn match csPseudoClassId contained "\<first\(-\(line\|letter\|child\)\)\=\>"
+syn region csPseudoClassLang matchgroup=csPseudoClassId start=":lang(" end=")" oneline
 
-syn region cssComment start="/\*" end="\*/" contains=@Spell
+syn region csComment start="/\*" end="\*/" contains=@Spell
 
-syn match cssUnicodeEscape "\\\x\{1,6}\s\?" contained
-syn match cssSpecialCharQQ +\\"+ contained
-syn match cssSpecialCharQ +\\'+ contained
-syn region cssStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=cssUnicodeEscape,cssSpecialCharQQ
-syn region cssStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=cssUnicodeEscape,cssSpecialCharQ
-syn match cssClassName "\.[A-Za-z][A-Za-z0-9_-]\+"
+syn match csUnicodeEscape "\\\x\{1,6}\s\?" contained
+syn match csSpecialCharQQ +\\"+ contained
+syn match csSpecialCharQ +\\'+ contained
+syn region csStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=csUnicodeEscape,csSpecialCharQQ
+syn region csStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=csUnicodeEscape,csSpecialCharQ
+syn match csClassName "\.[A-Za-z][A-Za-z0-9_-]\+"
 
 " custom cassius stuff
 syn match csString /"[^"]*"/ contains=csVar
@@ -180,63 +180,63 @@ else
   command -nargs=+ HiLink hi def link <args>
 endif
 
-HiLink cssComment Comment
-HiLink cssTagName Statement
-HiLink cssSelectorOp Special
-HiLink cssSelectorOp2 Special
-HiLink cssFontProp StorageClass
-HiLink cssColorProp StorageClass
-HiLink cssTextProp StorageClass
-HiLink cssBoxProp StorageClass
-HiLink cssRenderProp StorageClass
-HiLink cssAuralProp StorageClass
-HiLink cssRenderProp StorageClass
-HiLink cssGeneratedContentProp StorageClass
-HiLink cssPagingProp StorageClass
-HiLink cssTableProp StorageClass
-HiLink cssUIProp StorageClass
-HiLink cssFontAttr Type
-HiLink cssColorAttr Type
-HiLink cssTextAttr Type
-HiLink cssBoxAttr Type
-HiLink cssRenderAttr Type
-HiLink cssAuralAttr Type
-HiLink cssGeneratedContentAttr Type
-HiLink cssPagingAttr Type
-HiLink cssTableAttr Type
-HiLink cssUIAttr Type
-HiLink cssCommonAttr Type
-HiLink cssPseudoClassId PreProc
-HiLink cssPseudoClassLang Constant
-HiLink cssValueLength Number
-HiLink cssValueInteger Number
-HiLink cssValueNumber Number
-HiLink cssValueAngle Number
-HiLink cssValueTime Number
-HiLink cssValueFrequency Number
-HiLink cssFunction Constant
-HiLink cssURL String
-HiLink cssFunctionName Function
-HiLink cssColor Constant
-HiLink cssIdentifier Function
-HiLink cssInclude Include
-HiLink cssImportant Special
-HiLink cssBraces Function
-HiLink cssBraceError Error
-HiLink cssError Error
-HiLink cssInclude Include
-HiLink cssUnicodeEscape Special
-HiLink cssStringQQ String
-HiLink cssStringQ String
-HiLink cssMedia Special
-HiLink cssMediaType Special
-HiLink cssMediaComma Normal
-HiLink cssFontDescriptor Special
-HiLink cssFontDescriptorFunction Constant
-HiLink cssFontDescriptorProp StorageClass
-HiLink cssFontDescriptorAttr Type
-HiLink cssUnicodeRange Constant
-HiLink cssClassName Function
+HiLink csComment Comment
+HiLink csTagName Statement
+HiLink csSelectorOp Special
+HiLink csSelectorOp2 Special
+HiLink csFontProp StorageClass
+HiLink csColorProp StorageClass
+HiLink csTextProp StorageClass
+HiLink csBoxProp StorageClass
+HiLink csRenderProp StorageClass
+HiLink csAuralProp StorageClass
+HiLink csRenderProp StorageClass
+HiLink csGeneratedContentProp StorageClass
+HiLink csPagingProp StorageClass
+HiLink csTableProp StorageClass
+HiLink csUIProp StorageClass
+HiLink csFontAttr Type
+HiLink csColorAttr Type
+HiLink csTextAttr Type
+HiLink csBoxAttr Type
+HiLink csRenderAttr Type
+HiLink csAuralAttr Type
+HiLink csGeneratedContentAttr Type
+HiLink csPagingAttr Type
+HiLink csTableAttr Type
+HiLink csUIAttr Type
+HiLink csCommonAttr Type
+HiLink csPseudoClassId PreProc
+HiLink csPseudoClassLang Constant
+HiLink csValueLength Number
+HiLink csValueInteger Number
+HiLink csValueNumber Number
+HiLink csValueAngle Number
+HiLink csValueTime Number
+HiLink csValueFrequency Number
+HiLink csFunction Constant
+HiLink csURL String
+HiLink csFunctionName Function
+HiLink csColor Constant
+HiLink csIdentifier Function
+HiLink csInclude Include
+HiLink csImportant Special
+HiLink csBraces Function
+HiLink csBraceError Error
+HiLink csError Error
+HiLink csInclude Include
+HiLink csUnicodeEscape Special
+HiLink csStringQQ String
+HiLink csStringQ String
+HiLink csMedia Special
+HiLink csMediaType Special
+HiLink csMediaComma Normal
+HiLink csFontDescriptor Special
+HiLink csFontDescriptorFunction Constant
+HiLink csFontDescriptorProp StorageClass
+HiLink csFontDescriptorAttr Type
+HiLink csUnicodeRange Constant
+HiLink csClassName Function
 
 HiLink csString String
 HiLink csVar Structure
