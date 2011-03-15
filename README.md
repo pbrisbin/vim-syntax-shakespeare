@@ -13,9 +13,8 @@ directories.
 
 Be sure to set the filetypes by extension in your `~/.vimrc`.
 
-### Quirks
+### Todo
 
-* font-size works in test.cassius but not test.hs
 * javascript inside a script tag is difficult due to the lack of a 
   \</script> region-end
 
