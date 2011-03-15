@@ -15,7 +15,7 @@ endif
 syntax spell toplevel
 
 syn match hmString contained /"[^"]*"/ contains=hmVar,hmExp
-syn match hmKey /^\s*<[^>]*>\?/ contains=hmAttr,hmString
+syn match hmKey /^\s*<[^>$]*>\?/ contains=hmAttr,hmString
 syn match hmAttr contained /\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmExp
 syn match hmHsOp contained /\(\$\|\.\)/
 syn match hmTmpl /\^{[^}]*}/ contains=hmString,hmHsOp
