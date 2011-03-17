@@ -172,8 +172,8 @@ syn match csClassName "\.[A-Za-z][A-Za-z0-9_-]\+"
 " custom cassius stuff
 syn region csStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=csVar,csRoute
 syn region csStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=csVar,csRoute
-syn match csVar /\#{[^}]*}/ contains=csString,csHsOp
-syn match csRoute /@{[^}]*}/ contains=csString,csHsOp
+syn match csVar /\#{[^}]*}/ contains=csStringQ,csStringQQ,csHsOp
+syn match csRoute /@{[^}]*}/ contains=csStringQ,csStringQQ,csHsOp
 syn match csHsOp contained /\(\$\|\.\)/
 
 if version < 508
