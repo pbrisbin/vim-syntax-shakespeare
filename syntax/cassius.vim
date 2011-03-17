@@ -170,9 +170,10 @@ syn region csStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=csUnicodeEscape
 syn match csClassName "\.[A-Za-z][A-Za-z0-9_-]\+"
 
 " custom cassius stuff
-syn region csStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=csVar
-syn region csStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=csVar
+syn region csStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=csVar,csRoute
+syn region csStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=csVar,csRoute
 syn match csVar /\#{[^}]*}/ contains=csString,csHsOp
+syn match csRoute /@{[^}]*}/ contains=csString,csHsOp
 syn match csHsOp contained /\(\$\|\.\)/
 
 if version < 508
@@ -242,6 +243,7 @@ HiLink csClassName Function
 HiLink csStringQQ String
 HiLink csStringQ  String
 HiLink csVar      Structure
+HiLink csRoute    Type
 HiLink csHsOp     Operator
 
 delcommand HiLink

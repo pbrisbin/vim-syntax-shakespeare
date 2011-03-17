@@ -6,6 +6,7 @@ a:link
   font-size:        200%
   color:            #333333
   background-color: #909090
+  background-image: url(@{ImageR myImage})
 
 #someId
   color: #ffffff
