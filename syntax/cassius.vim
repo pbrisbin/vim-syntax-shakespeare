@@ -170,7 +170,8 @@ syn region csStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=csUnicodeEscape
 syn match csClassName "\.[A-Za-z][A-Za-z0-9_-]\+"
 
 " custom cassius stuff
-syn match csString /"[^"]*"/ contains=csVar
+syn region csStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=csVar
+syn region csStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=csVar
 syn match csVar /\#{[^}]*}/ contains=csString,csHsOp
 syn match csHsOp contained /\(\$\|\.\)/
 
@@ -238,9 +239,10 @@ HiLink csFontDescriptorAttr Type
 HiLink csUnicodeRange Constant
 HiLink csClassName Function
 
-HiLink csString String
-HiLink csVar Structure
-HiLink csHsOp Operator
+HiLink csStringQQ String
+HiLink csStringQ  String
+HiLink csVar      Structure
+HiLink csHsOp     Operator
 
 delcommand HiLink
 
