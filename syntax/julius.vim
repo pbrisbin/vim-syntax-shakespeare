@@ -16,8 +16,12 @@ endif
 :runtime! syntax/javascript.vim
 unlet b:current_syntax
 
-syn match jsString /"[^"]*"/ contains=jsVar
-syn match jsVar /\#{[^}]*}/ contains=jsString,jsHsOp
+syn region jsStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=jsVar,jsRoute
+syn region jsStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=jsVar,jsRoute
+
+syn match jsVar /\#{[^}]*}/ contains=jsString,jsRoute,jsHsOp
+syn match jsRoute /@{[^}]*}/ contains=jsString,jsVar,jsHsOp
+
 syn match jsHsOp contained /\(\$\|\.\)/
 
 if version < 508
@@ -26,9 +30,11 @@ else
   command! -nargs=+ HiLink hi def link <args>
 endif
 
-HiLink jsString String
-HiLink jsVar    Structure
-HiLink jsHsOp   Operator
+HiLink jsStringQQ String
+HiLink jsStringQ  String
+HiLink jsVar      Structure
+HiLink jsRoute    Type
+HiLink jsHsOp     Operator
 
 delcommand HiLink
 

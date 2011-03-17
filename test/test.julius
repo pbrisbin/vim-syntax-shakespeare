@@ -4,6 +4,9 @@ function foo() {
 
   $.ajax("someurl", function(data) {
     // do callback
+    var url='@{RouteR $ var}?term=x';
+    var url=@{RouteR $ var};
+    var url="@{RouteR $ var}";
   });
 
   alert("some alert");
