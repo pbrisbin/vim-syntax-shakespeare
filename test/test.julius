@@ -10,4 +10,8 @@ function foo() {
   });
 
   alert("some alert");
+
+  function test() {
+    ^{functionBody "x"}
+  }
 }

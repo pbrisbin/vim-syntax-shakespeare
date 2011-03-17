@@ -16,11 +16,12 @@ endif
 :runtime! syntax/javascript.vim
 unlet b:current_syntax
 
-syn region jsStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=jsVar,jsRoute
-syn region jsStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=jsVar,jsRoute
+syn region jsStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=jsVar,jsRoute,jsTmpl
+syn region jsStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=jsVar,jsRoute,jsTmpl
 
-syn match jsVar /\#{[^}]*}/ contains=jsString,jsRoute,jsHsOp
-syn match jsRoute /@{[^}]*}/ contains=jsString,jsVar,jsHsOp
+syn match jsVar /\#{[^}]*}/ contains=jsStringQ,jsStringQQ,jsRoute,jsHsOp
+syn match jsRoute /@{[^}]*}/ contains=jsStringQ,jsStringQQ,jsVar,jsHsOp
+syn match jsTmpl /\^{[^}]*}/ contains=jsStringQ,jsStringQQ,hmHsOp
 
 syn match jsHsOp contained /\(\$\|\.\)/
 
@@ -34,6 +35,7 @@ HiLink jsStringQQ String
 HiLink jsStringQ  String
 HiLink jsVar      Structure
 HiLink jsRoute    Type
+HiLink jsTmpl     Number
 HiLink jsHsOp     Operator
 
 delcommand HiLink
