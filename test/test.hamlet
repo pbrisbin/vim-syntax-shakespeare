@@ -9,9 +9,11 @@
 
     ^{template}
 
-    <p .something #{what}
+    <p .something #{what} title="foo">
       go to
       <a href="@{RouteR}">here
+
+      <a href=@{RouteR}> here
 
     <script>
       var x = foo;
