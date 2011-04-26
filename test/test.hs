@@ -27,8 +27,11 @@ addJulius [$julius|
     f(1.0);
     |]
 
+-- test oneliners
+addHamlet [hamlet|<a href=@{RouteR} title="foo">#{what}?|]
+
 addHamlet [$hamlet|
-    <header>
+    <header><h1>Foo
         <h1>All Tags
 
     \<!-- is this valid hamlet? -->

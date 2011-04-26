@@ -15,7 +15,12 @@ endif
 syntax spell toplevel
 
 syn match hmString contained /"[^"]*"/ contains=hmVar,hmExp
+
+" todo: we need the leading anchor (^) to prevent invalid nesting from 
+" highligting; however, this prevents oneliners from working -- we need 
+" some way to anchor to (start-of-line OR start-of-region).
 syn match hmKey /^\s*<[^>$]*>\?/ contains=hmVar,hmExp,hmAttr,hmString
+
 syn match hmAttr contained /\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmExp
 syn match hmHsOp contained /\(\$\|\.\)/
 syn match hmTmpl /\^{[^}]*}/ contains=hmString,hmHsOp
