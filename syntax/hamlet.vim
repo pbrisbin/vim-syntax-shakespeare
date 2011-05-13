@@ -26,7 +26,9 @@ syn match hmHsOp contained /\(\$\|\.\)/
 syn match hmTmpl /\^{[^}]*}/ contains=hmString,hmHsOp
 syn match hmVar /\#{[^}]*}/ contains=hmString,hsHsOp
 syn match hmExp /@{[^}]*}/ contains=hmString,hmHsOp
-syn match hmFunc /\$\(maybe\|nothing\|forall\|if\|elseif\|else\|with\)/
+syn match hmStmt /\$[^\\n]*/ contains=hmFunc,hmBindOp
+syn match hmFunc contained /\$\(maybe\|nothing\|forall\|if\|elseif\|else\|with\)/
+syn match hmBindOp contained /<-/
 syn match hmTrail display excludenl /\s\+$/
 
 syn include @HTML syntax/html.vim
@@ -47,6 +49,7 @@ HiLink hmString String
 HiLink hmKey    Identifier
 HiLink hmHsOp   Operator
 HiLink hmAttr   Operator
+HiLink hmBindOp Operator
 HiLink hmTmpl   Number
 HiLink hmVar    Structure
 HiLink hmExp    Type
