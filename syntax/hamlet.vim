@@ -26,7 +26,7 @@ syn match hmHsOp contained /\(\$\|\.\)/
 syn match hmTmpl /\^{[^}]*}/ contains=hmString,hmHsOp
 syn match hmVar /\#{[^}]*}/ contains=hmString,hsHsOp
 syn match hmExp /@{[^}]*}/ contains=hmString,hmHsOp
-syn match hmFunc /\$\(maybe\|nothing\|forall\|if\|elseif\|else\|with\|maybe\|nothing\)/
+syn match hmFunc /\$\(maybe\|nothing\|forall\|if\|elseif\|else\|with\)/
 syn match hmTrail display excludenl /\s\+$/
 
 syn include @HTML syntax/html.vim
