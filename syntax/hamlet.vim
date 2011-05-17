@@ -27,9 +27,9 @@ syn match hmTmpl /\^{[^}]*}/ contains=hmString,hmHsOp
 syn match hmVar /\#{[^}]*}/ contains=hmString,hsHsOp
 syn match hmLang /_{[^}]*}/ contains=hmString,hsHsOp
 syn match hmExp /@{[^}]*}/ contains=hmString,hmHsOp
-syn match hmStmt /\$[^\\n]*/ contains=hmFunc,hmBindOp
+syn match hmStmt /^\s*\$.\+$/ contains=hmFunc,hmStmtOps
 syn match hmFunc contained /\$\(maybe\|nothing\|forall\|if\|elseif\|else\|with\)/
-syn match hmBindOp contained "<-"
+syn match hmStmtOps contained /\(<-\|,\)/
 syn match hmTrail display excludenl /\s\+$/
 
 syn include @HTML syntax/html.vim
