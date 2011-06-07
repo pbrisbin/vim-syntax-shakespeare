@@ -30,6 +30,12 @@ syn keyword csTagName option p param pre q s samp script select small
 syn keyword csTagName span strike strong style sub sup tbody td
 syn keyword csTagName textarea tfoot th thead title tr tt ul u var
 
+" html5 tags, as per http://www.w3schools.com/html5/html5_reference.asp
+syn keyword csTagName article aside audio canvas command datalist details
+syn keyword csTagName embed figcaption figure footer header hgroup keygen
+syn keyword csTagName mark meter nav output progress rp rt ruby section
+syn keyword csTagName source summary time video wbr
+
 try
 syn match csIdentifier "#[A-Za-zÀ-ÿ_@][A-Za-zÀ-ÿ0-9_@-]*"
 catch /^.*/
