@@ -11,7 +11,11 @@ To use, just copy (or link) the contents of `./syntax` and
 `./after/syntax` into your `~/.vim/syntax` and `~/.vim/after/syntax` 
 directories.
 
-Be sure to set the filetypes by extension in your `~/.vimrc`.
+Be sure to set the filetypes by extension in your `~/.vimrc`:
+
+    au BufEnter *.hamlet  setlocal filetype=hamlet
+    au BufEnter *.cassius setlocal filetype=cassius
+    au BufEnter *.julius  setlocal filetype=julius
 
 ### Todo
 
