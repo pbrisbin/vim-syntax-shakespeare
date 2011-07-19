@@ -19,17 +19,20 @@ syn match hmString contained /"[^"]*"/ contains=hmVar,hmExp
 " todo: we need the leading anchor (^) to prevent invalid nesting from 
 " highligting; however, this prevents oneliners from working -- we need 
 " some way to anchor to (start-of-line OR start-of-region).
-syn match hmKey /^\s*<[^>$]*>\?/ contains=hmVar,hmExp,hmAttr,hmString
+syn match hmKey /^\s*\\\?\s*<[^>$]*>\?/ contains=hmVar,hmExp,hmAttr,hmString
 
 syn match hmAttr contained /\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmExp
 syn match hmHsOp contained /\(\$\|\.\)/
-syn match hmTmpl /\^{[^}]*}/ contains=hmString,hmHsOp
-syn match hmVar /\#{[^}]*}/ contains=hmString,hsHsOp
-syn match hmLang /_{[^}]*}/ contains=hmString,hsHsOp
-syn match hmExp /@{[^}]*}/ contains=hmString,hmHsOp
+
+syn match hmTmpl /\^{[^}]*}/  contains=hmString,hmHsOp
+syn match hmVar  /\#{[^}]*}/  contains=hmString,hsHsOp
+syn match hmLang /_{[^}]*}/   contains=hmString,hsHsOp
+syn match hmExp  /@{[^}]*}/   contains=hmString,hmHsOp
 syn match hmStmt /^\s*\$.\+$/ contains=hmFunc,hmStmtOps
-syn match hmFunc contained /\$\(maybe\|nothing\|forall\|if\|elseif\|else\|with\)/
+
+syn match hmFunc    contained /\$\(maybe\|nothing\|forall\|if\|elseif\|else\|with\)/
 syn match hmStmtOps contained /\(<-\|,\)/
+
 syn match hmTrail display excludenl /\s\+$/
 
 syn include @HTML syntax/html.vim
