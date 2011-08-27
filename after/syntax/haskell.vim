@@ -16,9 +16,9 @@ unlet b:current_syntax
 syn include @julius syntax/julius.vim
 unlet b:current_syntax
 
-syn region hmBlock matchgroup=quasiQuote start=/\[\$\?[iwx]\?hamlet|/ end=/|\]/ contains=@hamlet
-syn region csBlock matchgroup=quasiQuote start=/\[\$\?cassius|/       end=/|\]/ contains=@cassius
-syn region jsBlock matchgroup=quasiQuote start=/\[\$\?julius|/        end=/|\]/ contains=@julius
+syn region hmBlock matchgroup=quasiQuote start=/\[\$\?[siwx]\?hamlet|/ end=/|\]/ contains=@hamlet
+syn region csBlock matchgroup=quasiQuote start=/\[\$\?cassius|/        end=/|\]/ contains=@cassius
+syn region jsBlock matchgroup=quasiQuote start=/\[\$\?julius|/         end=/|\]/ contains=@julius
 
 if version < 508
   command! -nargs=+ HiLink hi link <args>
