@@ -7,15 +7,8 @@ Provided is each `syntax/$language.vim` file for external templates as
 well as an `after/syntax/haskell.vim` which will properly highlight 
 quasi-quoted blocks inside a haskell source file.
 
-To use, just copy (or link) the contents of `./syntax` and 
-`./after/syntax` into your `~/.vim/syntax` and `~/.vim/after/syntax` 
-directories.
-
-Be sure to set the filetypes by extension in your `~/.vimrc`:
-
-    au BufEnter *.hamlet  setlocal filetype=hamlet
-    au BufEnter *.cassius setlocal filetype=cassius
-    au BufEnter *.julius  setlocal filetype=julius
+To use, just copy (or link) the contents of `./syntax`, `./after/syntax`, and
+`./ftdetect` into the corresponding directories under `~/.vim`. 
 
 ### Todo
 
