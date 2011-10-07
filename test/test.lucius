@@ -1,0 +1,19 @@
+body {
+  font: 'Helvetica';
+}
+
+div#something {
+  background: url(@{RouteR foo}) repeat 10 10;
+}
+
+span.something_else {
+  font: "#{myFont}"
+}
+
+.#{idAsVar} {
+
+}
+
+##{clasAsVar} {
+
+}
