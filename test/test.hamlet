@@ -1,31 +1,91 @@
-\<!DOCTYPE html>
-<html>
-  <head>
-    <title>My #{title}
+Raw HTML is supported by escaping:
+
+  \<!-- examples taken from http://www.yesodweb.com/book/templates -->
+
+  \<div class="x">Some raw Html</span>
+
+Tags should be highlighted:
 
   <body>
-    <p>
-      This works
+    <p>Some paragraph.
+    <ul>
+      <li>Item 1
+      <li>Item 2
 
-    ^{template}
+Trailing space is made more visible:
 
-    <p .something #{what} title="foo">
+    <p>Paragraph 
+    <i>italic
+    \ end
 
-      <a href=@{RouteR}> here
-      \<a href=@{RouteR}>here</a>
+Inline tags are valid too (TODO):
 
-      \ <a href="@{RouteR}">here
+    <p>Paragracph <i>italic</i> end.
 
-    <script>
-      var x = foo;
+Interpolation
 
-      function doit(_x) {
-        doit(_x);
-      }
+  <p>Hello, my name is #{name person} and I am #{show $ age person}.
+  <p>
+    Let's do some funny stuff with my name: 
+    <b>#{sort $ map toLower (name person)}
+    <p>Oh, and in 5 years I'll be #{show ((+) (age person) 5)} years old.
 
-      $forall x <- xs
-        alert(#{x})
+  <footer>
+    Return to 
+    <a href=@{Home}>Homepage
+    .
 
-      doit(x);
+  <body>
+    <p>This is my page.
+    ^{footer}
 
-    \<span class="x">Some raw Html</span>
+Attributes:
+
+  <input type=checkbox checked>
+
+  <p #paragraphid .class1 .class2>
+
+  <input type=checkbox :isChecked:checked>
+
+  <p :isRed:style="color:red">
+
+Logic:
+
+  $if isAdmin
+    <p>...
+  $elseif isLoggedIn
+    <p>...
+  $else
+    <p>...
+
+  $maybe name <- maybeName
+    <p>...
+  $nothing
+    <p>...
+
+  $maybe Person firstName lastName <- maybePerson
+    <p>...
+
+  <ul>
+    $forall person <- people
+      <li>#{person}
+
+  $case foo
+    $of Left bar
+      <p>...
+    $of Right baz
+      <p>...
+
+  $with foo <- some very (long ugly) expression that $ should only $ happen once
+    <p>But I'm going to use #{foo} multiple times. #{foo}
+
+i18n:
+
+$doctype 5
+<html>
+  <head>
+    <title>i18n
+  <body>
+    <h1>_{Hello}
+    <p>_{Apples count}
+

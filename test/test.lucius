@@ -1,19 +1,31 @@
-body {
-  font: 'Helvetica';
-}
+Css:
 
-div#something {
-  background: url(@{RouteR foo}) repeat 10 10;
-}
+  body { font: 'Helvetica'; }
 
-span.something_else {
-  font: "#{myFont}"
-}
+Interpolation:
 
-.#{idAsVar} {
+  div#something { background: url(@{RouteR foo}) repeat 10 10; }
 
-}
+  span.something_else { font: "#{myFont}" }
 
-##{clasAsVar} {
+  .#{idAsVar} { }
 
-}
+  ##{clasAsVar} { }
+
+Nested (TODO):
+
+  .some {
+    .nested {
+
+    }
+
+    .classes {
+
+    }
+  }
+
+Lucius variables (TODO):
+
+  @textcolor: #ccc; /* just because we hate our users */
+  body { color: #{textcolor} }
+  a:link, a:visited { color: #{textcolor} }
