@@ -1,3 +1,7 @@
+--
+-- Haskell source file
+--
+
 [hamlet|
     <head>
         <title>#{title}

@@ -20,10 +20,14 @@ I would also recommend pathogen for automated plugin loading. See my
 * javascript inside a script tag is difficult due to the lack of a 
   \</script> region-end
 
-* Better screenshots here (volunteers?)
+* highlight in-line html tags added as raw
+
+* nested blocks in lucius
+
+* bug in lucius unquoted interpolations
 
 ### Screenshots
 
 Embedded hamlet in a haskell source file:
 
-![Screenshot](http://pbrisbin.com/static/fileshare/hamlet.png)
+![Screenshot](http://pbrisbin.com/static/screenshots/desktop_1202101148.png)

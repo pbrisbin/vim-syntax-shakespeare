@@ -1,10 +1,12 @@
-Comments:
+$#
+$# Hamlet file:
+$#
 
-  $# I did not know we supported this
+$# Comments:
 
   <!-- examples taken from http://www.yesodweb.com/book/templates -->
 
-Tags should be highlighted:
+$# Tags should be highlighted:
 
   <body>
     <p>Some paragraph.
@@ -12,17 +14,17 @@ Tags should be highlighted:
       <li>Item 1
       <li>Item 2
 
-Trailing space is made more visible:
+$# Trailing space is made more visible:
 
     <p>Paragraph 
     <i>italic
     \ end
 
-Inline tags are valid too? (TODO):
+$# Inline tags are valid too? (TODO):
 
-    <p>Paragracph <i>italic</i> end.
+    <p>Paragraph <i>italic</i> end.
 
-Interpolation
+$# Interpolation
 
   <p>Hello, my name is #{name person} and I am #{show $ age person}.
   <p>
@@ -40,19 +42,19 @@ Interpolation
     <p>This is my page.
     ^{footer}
 
-Attributes:
+$# Attributes:
 
   <input type=checkbox checked>
 
   <p #paragraphid .class1 .class2>
 
-Conditional attributes:
+$# Conditional attributes:
 
   <input type=checkbox :isChecked:checked .other
 
   <p :isRed:style="color: red;" #other>
 
-Logic:
+$# Logic:
 
   $if isAdmin
     <p>...
@@ -82,7 +84,7 @@ Logic:
   $with foo <- some very (long ugly) expression that $ should only $ happen once
     <p>But I'm going to use #{foo} multiple times. #{foo}
 
-i18n:
+$# i18n:
 
 $doctype 5
 <html>
@@ -91,4 +93,3 @@ $doctype 5
   <body>
     <h1>_{Hello}
     <p>_{Apples count}
-

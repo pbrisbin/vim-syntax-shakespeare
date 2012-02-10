@@ -1,8 +1,12 @@
-Css:
+/*
+ * Lucius
+ */
+
+/* Css: */
 
   body { font: 'Helvetica'; }
 
-Interpolation:
+/* Interpolation: */
 
   div#something { background: url(@{RouteR foo}) repeat 10 10; }
 
@@ -12,7 +16,7 @@ Interpolation:
 
   ##{clasAsVar} { }
 
-Nested (TODO):
+/* Nested (TODO): */
 
   .some {
     .nested {
@@ -24,7 +28,7 @@ Nested (TODO):
     }
   }
 
-Lucius variables (TODO):
+/* Lucius variables (TODO): */
 
   @textcolor: #ccc; /* just because we hate our users */
   body { color: #{textcolor} }
