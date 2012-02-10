@@ -4,7 +4,9 @@
         <script src="/jquery.min.js">
         <script src="/jquery-ui.min.js">
 
-    \<!-- why you no work -->
+    <!-- comment -->
+
+    $# comment
 
     <body>
         <p>Go to 
@@ -101,3 +103,7 @@
 
     f(1.0);
     |]
+
+[st|Some #{interpolated $ text}|]
+
+[lt|Some #{lazily $ interpolated $ text}|]

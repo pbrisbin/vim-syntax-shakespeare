@@ -15,7 +15,7 @@ endif
 syntax spell toplevel
 
 syn match hmString  contained /"[^"]*"/ contains=hmVar,hmRoute,hmLang
-syn match hmNum     contained /[0-9]*/
+syn match hmNum     contained /\<[0-9]*\>/
 syn match hmTrail   display excludenl /\s\+$/
 syn match hmComment display /\(\$#.*$\|<!--.*-->\)/
 
