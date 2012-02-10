@@ -1,8 +1,8 @@
-Raw HTML is supported by escaping:
+Comments:
 
-  \<!-- examples taken from http://www.yesodweb.com/book/templates -->
+  $# I did not know we supported this
 
-  \<div class="x">Some raw Html</span>
+  <!-- examples taken from http://www.yesodweb.com/book/templates -->
 
 Tags should be highlighted:
 
@@ -18,7 +18,7 @@ Trailing space is made more visible:
     <i>italic
     \ end
 
-Inline tags are valid too (TODO):
+Inline tags are valid too? (TODO):
 
     <p>Paragracph <i>italic</i> end.
 
@@ -28,7 +28,8 @@ Interpolation
   <p>
     Let's do some funny stuff with my name: 
     <b>#{sort $ map toLower (name person)}
-    <p>Oh, and in 5 years I'll be #{show ((+) (age person) 5)} years old.
+
+  <p>Oh, and in 5 years I'll be #{show ((+) (age person) 5)} years old.
 
   <footer>
     Return to 
@@ -45,9 +46,11 @@ Attributes:
 
   <p #paragraphid .class1 .class2>
 
-  <input type=checkbox :isChecked:checked>
+Conditional attributes:
 
-  <p :isRed:style="color:red">
+  <input type=checkbox :isChecked:checked .other
+
+  <p :isRed:style="color: red;" #other>
 
 Logic:
 
