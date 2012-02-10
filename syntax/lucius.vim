@@ -23,6 +23,7 @@ syn region cssURL contained matchgroup=cssFunctionName start="\<url\s*(" end=")"
 
 syn match lcVar /\#{[^}]*}/ contains=cssStringQ,cssStringQQ,lcRoute,lcHsOp
 syn match lcRoute /@{[^}]*}/ contains=cssStringQ,cssStringQQ,lcVar,lcHsOp
+syn match lcAtVar /@[^{][^:]*:/
 
 syn match lcHsOp contained /\(\$\|\.\)/
 
@@ -33,6 +34,7 @@ else
 endif
 
 HiLink lcVar      Structure
+HiLink lcAtVar    Number
 HiLink lcRoute    Type
 HiLink lcHsOp     Operator
 
