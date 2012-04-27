@@ -93,3 +93,8 @@ $doctype 5
   <body>
     <h1>_{Hello}
     <p>_{Apples count}
+
+$# new attrs syntax
+
+<p *{attrs} #{var}>
+
