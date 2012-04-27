@@ -15,20 +15,22 @@ endif
 syntax spell toplevel
 
 syn match hmString  contained /"[^"]*"/ contains=hmVar,hmRoute,hmLang
-syn match hmNum     contained /\<[0-9]*\>/
+syn match hmNum     contained /\<[0-9]\+\>/
 syn match hmTrail   display excludenl /\s\+$/
 syn match hmComment display /\(\$#.*$\|<!--.*-->\)/
 
 " We use the leading anchor (^) to prevent invalid nesting from
 " highlighting; however, this prevents oneliner QQs from working.
-syn match hmKey /^\s*\\\?\s*<[^!][^>$]*>\?/ contains=hmVar,hmRoute,hmAttr,hmString,hmCond
+syn match hmKey /^\s*\\\?\s*<[^!][^>$]*>\?/ contains=hmVar,hmRoute,hmAttr,hmString,hmCond,hmAttrs
 syn match hmAttr contained /\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmRoute,hmLang
 syn match hmCond contained /:[^:]\+:\([^ ]*"[^"]*"\|[^ >]*\)/ contains=hmString,hmNumber,hmCondOp,hmHsOp
 
-syn match hmVar   /\#{[^}]*}/  contains=hmHsOp,hmString,hmNum
-syn match hmRoute /@{[^}]*}/   contains=hmHsOp,hmString,hmNum
-syn match hmLang  /_{[^}]*}/   contains=hmHsOp,hmString,hmNum
-syn match hmTmpl  /\^{[^}]*}/  contains=hmHsOp,hmString,hmNum
+" various interpolations
+syn region hmVar   matchgroup=hmVarDelim   start="#{"  end="}" contains=hmHsOp,hmString,hmNum
+syn region hmAttrs matchgroup=hmAttrsDelim start="\*{" end="}" contains=hmHsOp,hmString,hmNum
+syn region hmRoute matchgroup=hmRouteDelim start="@{"  end="}" contains=hmHsOp,hmString,hmNum
+syn region hmTmpl  matchgroup=hmTmplDelim  start="\^{" end="}" contains=hmHsOp,hmString,hmNum
+syn region hmLang  matchgroup=hmLangDelim  start="_{"  end="}" contains=hmHsOp,hmString,hmNum
 
 " can't use keyword due to special chars
 syn match hmHsOp   contained /\(\$\|\.\)/
@@ -51,14 +53,17 @@ HiLink hmHsOp    Operator
 HiLink hmAttr    Operator
 HiLink hmCond    Function
 HiLink hmCondOp  Number
-HiLink hmTmpl    Number
-HiLink hmVar     Structure
-HiLink hmLang    Structure
 HiLink hmRoute   Type
+HiLink hmTmpl    Number
 HiLink hmFunc    Function
 HiLink hmFuncOp  Number
 HiLink hmTrail   Error
 HiLink hmComment Comment
+
+HiLink hmVarDelim   Delimiter
+HiLink hmRouteDelim Delimiter
+HiLink hmLangDelim  Delimiter
+HiLink hmTmplDelim  Delimiter
 
 delcommand HiLink
 
