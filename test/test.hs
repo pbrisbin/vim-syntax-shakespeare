@@ -16,7 +16,7 @@
         <p>Go to 
         <a href="@{RoutR}">
 
-        <p .something #{what}
+        <p .something #{what}>
 
         <div id="accordion">
             $forall tagGroup <- tagGroups

@@ -21,7 +21,7 @@ syn match hmComment display /\(\$#.*$\|<!--.*-->\)/
 
 " We use the leading anchor (^) to prevent invalid nesting from
 " highlighting; however, this prevents oneliner QQs from working.
-syn match hmKey /^\s*\\\?\s*<[^!][^>$]*>\?/ contains=hmVar,hmRoute,hmAttr,hmString,hmCond,hmAttrs
+syn match hmKey /^\s*\\\?\s*<[^!][^>]*>/ contains=hmVar,hmRoute,hmAttr,hmString,hmCond,hmAttrs
 syn match hmAttr contained /\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmRoute,hmLang
 syn match hmCond contained /:[^:]\+:\([^ ]*"[^"]*"\|[^ >]*\)/ contains=hmString,hmNumber,hmCondOp,hmHsOp
 

@@ -50,7 +50,7 @@ $# Attributes:
 
 $# Conditional attributes:
 
-  <input type=checkbox :isChecked:checked .other
+  <input type=checkbox :isChecked:checked .other>
 
   <p :isRed:style="color: red;" #other>
 
