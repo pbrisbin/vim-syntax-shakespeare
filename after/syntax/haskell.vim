@@ -19,17 +19,17 @@ unlet b:current_syntax
 syn include @julius syntax/julius.vim
 unlet b:current_syntax
 
-syn match txtInterp  contained /\#{[^}]*}/  contains=txtOp,txtString,txtNum
 syn match txtOp      contained /\(\$\|\.\)/
 syn match txtString  contained /"[^"]*"/
 syn match txtNum     contained /\<[0-9]*\>/
 
-syn region hmBlock  matchgroup=quasiQuote start=/\[\$\?[iws]\?hamlet|/ end=/|\]/ contains=@hamlet
-syn region hmBlock  matchgroup=quasiQuote start=/\[\$\?xs\?hamlet|/    end=/|\]/ contains=@hamlet
-syn region csBlock  matchgroup=quasiQuote start=/\[\$\?cassius|/       end=/|\]/ contains=@cassius
-syn region lcBlock  matchgroup=quasiQuote start=/\[\$\?lucius|/        end=/|\]/ contains=@lucius
-syn region jsBlock  matchgroup=quasiQuote start=/\[\$\?julius|/        end=/|\]/ contains=@julius
-syn region txtBlock matchgroup=quasiQuote start=/\[\$\?[sl]t|/         end=/|\]/ contains=txtInterp
+syn region txtInterp matchgroup=txtInterpDelim start="#{"  end="}" contains=txtOp,txtString,txtNum
+syn region hmBlock   matchgroup=quasiQuote start=/\[\$\?[iws]\?hamlet|/ end=/|\]/ contains=@hamlet
+syn region hmBlock   matchgroup=quasiQuote start=/\[\$\?xs\?hamlet|/    end=/|\]/ contains=@hamlet
+syn region csBlock   matchgroup=quasiQuote start=/\[\$\?cassius|/       end=/|\]/ contains=@cassius
+syn region lcBlock   matchgroup=quasiQuote start=/\[\$\?lucius|/        end=/|\]/ contains=@lucius
+syn region jsBlock   matchgroup=quasiQuote start=/\[\$\?julius|/        end=/|\]/ contains=@julius
+syn region txtBlock  matchgroup=quasiQuote start=/\[\$\?[sl]t|/         end=/|\]/ contains=txtInterp
 
 if version < 508
   command! -nargs=+ HiLink hi link <args>
@@ -37,15 +37,11 @@ else
   command! -nargs=+ HiLink hi def link <args>
 endif
 
-" note: csBlock/lcBlock purposely left out
-HiLink quasiQuote Boolean
-HiLink hmBlock    StorageClass
-HiLink jsBlock    StorageClass
-
-HiLink txtInterp Structure
-HiLink txtOp     Operator
-HiLink txtString String
-HiLink txtNum    Number
+HiLink quasiQuote     Boolean
+HiLink txtInterpDelim Delimiter
+HiLink txtOp          Operator
+HiLink txtString      String
+HiLink txtNum         Number
 
 delcommand HiLink
 
