@@ -19,17 +19,20 @@ unlet b:current_syntax
 syn include @julius syntax/julius.vim
 unlet b:current_syntax
 
-syn match txtOp      contained /\(\$\|\.\)/
-syn match txtString  contained /"[^"]*"/
-syn match txtNum     contained /\<[0-9]*\>/
 
-syn region txtInterp matchgroup=txtInterpDelim start="#{"  end="}" contains=txtOp,txtString,txtNum
 syn region hmBlock   matchgroup=quasiQuote start=/\[\$\?[iws]\?hamlet|/ end=/|\]/ contains=@hamlet
 syn region hmBlock   matchgroup=quasiQuote start=/\[\$\?xs\?hamlet|/    end=/|\]/ contains=@hamlet
 syn region csBlock   matchgroup=quasiQuote start=/\[\$\?cassius|/       end=/|\]/ contains=@cassius
 syn region lcBlock   matchgroup=quasiQuote start=/\[\$\?lucius|/        end=/|\]/ contains=@lucius
 syn region jsBlock   matchgroup=quasiQuote start=/\[\$\?julius|/        end=/|\]/ contains=@julius
-syn region txtBlock  matchgroup=quasiQuote start=/\[\$\?[sl]t|/         end=/|\]/ contains=txtInterp
+
+" simple text
+syn region txtBlock  matchgroup=quasiQuote start=/\[\$\?[sl]t|/ end=/|\]/ contains=txtInterp
+syn region txtInterp matchgroup=txtInterpDelim start="#{"  end="}" contains=txtOp,txtString,txtNum
+
+syn match txtOp      contained /\(\$\|\.\)/
+syn match txtString  contained /"[^"]*"/
+syn match txtNum     contained /\<[0-9]*\>/
 
 if version < 508
   command! -nargs=+ HiLink hi link <args>
@@ -38,6 +41,8 @@ else
 endif
 
 HiLink quasiQuote     Boolean
+HiLink txtBlock       String
+HiLink txtInterp      Normal
 HiLink txtInterpDelim Delimiter
 HiLink txtOp          Operator
 HiLink txtString      String
