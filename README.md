@@ -30,4 +30,4 @@ I would also recommend pathogen for automated plugin loading. See my
 
 Embedded hamlet in a haskell source file:
 
-![Screenshot](http://pbrisbin.com/static/screenshots/desktop_1202101148.png)
+![Screenshot](http://files.pbrisbin.com/screenshots/desktop_1202101148.png)
