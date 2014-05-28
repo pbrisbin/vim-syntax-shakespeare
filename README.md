@@ -1,19 +1,20 @@
-# Html Template Syntax
+# Shakespeare Syntax
 
-A collection of vim syntax files for working in haskell's various html 
-templating languages (hamlet, cassius, lucius, and julius).
+A collection of vim syntax files for working in the [shakespeare][]
+templating languages used by Yesod.
+
+[shakespeare]: http://hackage.haskell.org/package/shakespeare
 
 Provided is each `syntax/$language.vim` file for external templates as 
 well as an `after/syntax/haskell.vim` which will properly highlight 
 quasi-quoted blocks inside a haskell source file.
 
-To use, just copy (or link) the contents of this repo into the correct 
-directories under `~/.vim`.
+## Installation
 
-I would also recommend pathogen for automated plugin loading. See my 
-[vim repo][repo] (or just google around) for an example of this usage.
+- Use [Vundle][]
+- Add `Plugin "pbrisbin/vim-syntax-shakespeare"`
 
-[repo]: https://github.com/pbrisbin/vim-config
+[vundle]: https://github.com/gmarik/Vundle.vim
 
 ### Todo
 
