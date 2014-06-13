@@ -98,3 +98,8 @@ $# new attrs syntax
 
 <p *{attrs} #{var}>
 
+$# multiline tags
+
+<div #ng-app
+     .full-height
+     ng-app="doxApp">
