@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Hamlet template syntax highlighting
 " Author:   Patrick Brisbin <me@pbrisbin.com>
-" License:  as-is
+" License:  MIT
 
 if !exists("main_syntax")
   if version < 600

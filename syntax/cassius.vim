@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Cassius template syntax highlighting
 " Author:   Patrick Brisbin <me@pbrisbin.com>
-" License:  as-is
+" License:  MIT
 "
 " This is basically css.vim, but with most values not contained (braces 
 " aren't needed in cassius) and a few features removed.

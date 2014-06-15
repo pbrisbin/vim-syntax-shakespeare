@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: haskell with embedded hamlet
 " Author:   Patrick Brisbin <me@pbrisbin.com>
-" License:  as-is
+" License:  MIT
 
 " store and remove current syntax value
 let old_syntax = b:current_syntax
