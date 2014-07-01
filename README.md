@@ -31,4 +31,4 @@ quasi-quoted blocks inside a haskell source file.
 
 Embedded hamlet in a haskell source file:
 
-![Screenshot](http://files.pbrisbin.com/screenshots/desktop_1202101148.png)
+![shot](shot.png)
