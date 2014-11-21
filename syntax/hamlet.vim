@@ -12,6 +12,10 @@ if !exists("main_syntax")
   let main_syntax = 'hamlet'
 endif
 
+if !exists("g:hamlet_prevent_invalid_nesting")
+  let g:hamlet_prevent_invalid_nesting = 1
+endif
+
 syntax spell toplevel
 
 syn match hmString  contained /"[^"]*"/ contains=hmVar,hmRoute,hmLang
@@ -21,7 +25,11 @@ syn match hmComment display /\(\$#.*$\|<!--\_.\{-}-->\)/
 
 " We use the leading anchor (^) to prevent invalid nesting from
 " highlighting; however, this prevents oneliner QQs from working.
-syn match hmKey /^\s*\\\?\s*<[^!]\_.\{-}>/ contains=hmVar,hmRoute,hmAttr,hmString,hmCond,hmAttrs
+if g:hamlet_prevent_invalid_nesting == 1
+  syn match hmKey /^\s*\\\?\s*<[^!]\_.\{-}>/ contains=hmVar,hmRoute,hmAttr,hmString,hmCond,hmAttrs
+else
+  syn match hmKey /\s*\\\?\s*<[^!]\_.\{-}>/ contains=hmVar,hmRoute,hmAttr,hmString,hmCond,hmAttrs
+endif
 syn match hmAttr contained /\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmRoute,hmLang
 syn match hmCond contained /:[^:]\+:\([^ ]*"[^"]*"\|[^ >]*\)/ contains=hmString,hmNumber,hmCondOp,hmHsOp
 
