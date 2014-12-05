@@ -16,12 +16,20 @@ if !exists("g:hamlet_prevent_invalid_nesting")
   let g:hamlet_prevent_invalid_nesting = 1
 endif
 
+if !exists("g:hamlet_highlight_trailing_space")
+  let g:hamlet_highlight_trailing_space = 1
+endif
+
 syntax spell toplevel
 
 syn match hmString  contained /"[^"]*"/ contains=hmVar,hmRoute,hmLang
 syn match hmNum     contained /\<[0-9]\+\>/
-syn match hmTrail   display excludenl /\s\+$/
 syn match hmComment display /\(\$#.*$\|<!--\_.\{-}-->\)/
+
+" The user should be able to turn off trailing space highligting.
+if g:hamlet_highlight_trailing_space == 1
+  syn match hmTrail   display excludenl /\s\+$/
+endif
 
 " We use the leading anchor (^) to prevent invalid nesting from
 " highlighting; however, this prevents oneliner QQs from working.

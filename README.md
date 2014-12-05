@@ -16,6 +16,21 @@ quasi-quoted blocks inside a haskell source file.
 
 [vundle]: https://github.com/gmarik/Vundle.vim
 
+## Options
+
+The following options can be added to your `~/.vimrc` in order to
+to change the behaviour of this plugin.
+
+Allow one-liner QQs even if they have invalid nesting:
+```
+let g:hamlet_prevent_invalid_nesting = 0
+```
+
+Don't highlight empty space at the end of lines:
+```
+let g:hamlet_highlight_trailing_space = 0
+```
+
 ### Todo
 
 * javascript inside a script tag is difficult due to the lack of a 
