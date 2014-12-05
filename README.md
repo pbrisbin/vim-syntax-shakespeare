@@ -5,8 +5,8 @@ templating languages used by Yesod.
 
 [shakespeare]: http://hackage.haskell.org/package/shakespeare
 
-Provided is each `syntax/$language.vim` file for external templates as 
-well as an `after/syntax/haskell.vim` which will properly highlight 
+Provided is each `syntax/$language.vim` file for external templates as
+well as an `after/syntax/haskell.vim` which will properly highlight
 quasi-quoted blocks inside a haskell source file.
 
 ## Installation
@@ -18,7 +18,7 @@ quasi-quoted blocks inside a haskell source file.
 
 ### Todo
 
-* javascript inside a script tag is difficult due to the lack of a 
+* javascript inside a script tag is difficult due to the lack of a
   \</script> region-end
 
 * highlight in-line html tags added as raw

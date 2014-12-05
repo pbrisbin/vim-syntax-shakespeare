@@ -3,7 +3,7 @@
 " Author:   Patrick Brisbin <me@pbrisbin.com>
 " License:  MIT
 "
-" This is basically css.vim, but with most values not contained (braces 
+" This is basically css.vim, but with most values not contained (braces
 " aren't needed in cassius) and a few features removed.
 "
 """
