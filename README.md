@@ -22,12 +22,14 @@ The following options can be added to your `~/.vimrc` in order to
 to change the behaviour of this plugin.
 
 Allow one-liner QQs even if they have invalid nesting:
-```
+
+```vim
 let g:hamlet_prevent_invalid_nesting = 0
 ```
 
 Don't highlight empty space at the end of lines:
-```
+
+```vim
 let g:hamlet_highlight_trailing_space = 0
 ```
 
