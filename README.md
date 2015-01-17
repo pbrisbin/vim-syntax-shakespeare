@@ -12,7 +12,7 @@ quasi-quoted blocks inside a haskell source file.
 ## Installation
 
 - Use [Vundle][]
-- Add `Plugin "pbrisbin/vim-syntax-shakespeare"`
+- Add `Plugin 'pbrisbin/vim-syntax-shakespeare'`
 
 [vundle]: https://github.com/gmarik/Vundle.vim
 
