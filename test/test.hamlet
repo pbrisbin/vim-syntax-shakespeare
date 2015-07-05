@@ -104,3 +104,8 @@ $# multiline tags
 <div #ng-app
      .full-height
      ng-app="doxApp">
+
+$# bare attributes
+
+<form type=submit>
+  <input type=checkbox>

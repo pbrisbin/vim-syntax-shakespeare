@@ -33,11 +33,12 @@ endif
 " We use the leading anchor (^) to prevent invalid nesting from
 " highlighting; however, this prevents oneliner QQs from working.
 if g:hamlet_prevent_invalid_nesting == 1
-  syn match hmKey /^\s*\\\?\s*<[^!]\_.\{-}>/ contains=hmVar,hmRoute,hmAttr,hmString,hmCond,hmAttrs
+  syn match hmKey /^\s*\\\?\s*<[^!]\_.\{-}>/ contains=hmVar,hmRoute,hmAttr,hmAttrVal,hmString,hmCond,hmAttrs
 else
-  syn match hmKey /\s*\\\?\s*<[^!]\_.\{-}>/ contains=hmVar,hmRoute,hmAttr,hmString,hmCond,hmAttrs
+  syn match hmKey /\s*\\\?\s*<[^!]\_.\{-}>/ contains=hmVar,hmRoute,hmAttr,hmAttrVal,hmString,hmCond,hmAttrs
 endif
 syn match hmAttr contained /\(\.\|#\)[^ >]*/ contains=hmString,hmVar,hmRoute,hmLang
+syn match hmAttrVal contained /=\zs[^ >]*/ contains=hmString,hmVar,hmRoute,hmLang
 syn match hmCond contained /:[^:]\+:\([^ ]*"[^"]*"\|[^ >]*\)/ contains=hmString,hmNumber,hmCondOp,hmHsOp
 
 " various interpolations
@@ -67,6 +68,7 @@ HiLink hmNum     Number
 HiLink hmKey     Identifier
 HiLink hmHsOp    Operator
 HiLink hmAttr    Operator
+HiLink hmAttrVal String
 HiLink hmCond    Function
 HiLink hmCondOp  Number
 HiLink hmRoute   Type
