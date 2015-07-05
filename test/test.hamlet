@@ -36,6 +36,7 @@ $# Interpolation
   <footer>
     Return to 
     <a href=@{Home}>Homepage
+    <a href=@?{(Home, [(q, p)])}>Homepage
     .
 
   <body>

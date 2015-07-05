@@ -180,6 +180,7 @@ syn region csStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=csVar,csRoute
 syn region csStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=csVar,csRoute
 syn match csVar /\#{[^}]*}/ contains=csStringQ,csStringQQ,csHsOp
 syn match csRoute /@{[^}]*}/ contains=csStringQ,csStringQQ,csHsOp
+syn match csRoute /@?{[^}]*}/ contains=csStringQ,csStringQQ,csHsOp
 syn match csHsOp contained /\(\$\|\.\)/
 
 if version < 508

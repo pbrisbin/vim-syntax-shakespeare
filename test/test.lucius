@@ -9,6 +9,7 @@
 /* Interpolation: */
 
   div#something { background: url(@{RouteR foo}) repeat 10 10; }
+  div#something { background: url(@?{(RouteR, [(q, p)]}) repeat 10 10; }
 
   span.something_else { font: "#{myFont}" }
 

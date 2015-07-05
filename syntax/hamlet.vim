@@ -44,6 +44,7 @@ syn match hmCond contained /:[^:]\+:\([^ ]*"[^"]*"\|[^ >]*\)/ contains=hmString,
 syn region hmVar   matchgroup=hmVarDelim   start="#{"  end="}" contains=hmHsOp,hmString,hmNum
 syn region hmAttrs matchgroup=hmAttrsDelim start="\*{" end="}" contains=hmHsOp,hmString,hmNum
 syn region hmRoute matchgroup=hmRouteDelim start="@{"  end="}" contains=hmHsOp,hmString,hmNum
+syn region hmRoute matchgroup=hmRouteDelim start="@?{" end="}" contains=hmHsOp,hmString,hmNum
 syn region hmTmpl  matchgroup=hmTmplDelim  start="\^{" end="}" contains=hmHsOp,hmString,hmNum
 syn region hmLang  matchgroup=hmLangDelim  start="_{"  end="}" contains=hmHsOp,hmString,hmNum
 

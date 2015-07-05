@@ -11,6 +11,7 @@ a:link
   color:            #333333
   background-color: #909090
   background-image: url(@{ImageR myImage})
+  background-image: url(@?{(ImageR, [(q, p)])})
 
 #someId
   color: #ffffff

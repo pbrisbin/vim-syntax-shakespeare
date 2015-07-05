@@ -21,6 +21,7 @@ syn region jsStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=jsVar,jsRoute,j
 
 syn match jsVar /\#{[^}]*}/ contains=jsStringQ,jsStringQQ,jsRoute,jsHsOp
 syn match jsRoute /@{[^}]*}/ contains=jsStringQ,jsStringQQ,jsVar,jsHsOp
+syn match jsRoute /@?{[^}]*}/ contains=jsStringQ,jsStringQQ,jsVar,jsHsOp
 syn match jsTmpl /\^{[^}]*}/ contains=jsStringQ,jsStringQQ,hmHsOp
 
 syn match jsHsOp contained /\(\$\|\.\)/

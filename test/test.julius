@@ -9,6 +9,7 @@ function foo() {
     var url='@{RouteR $ var}?term=x';
     var url=@{RouteR $ var};
     var url="@{RouteR $ var}";
+    var url="@?{(RouteR, [(q, p)])}";
   });
 
   alert("some alert");

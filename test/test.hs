@@ -14,7 +14,8 @@
 
     <body>
         <p>Go to 
-        <a href="@{RoutR}">
+        <a href="@{RouteR}">
+        <a href="@?{(RouteR, [(q, p)])}">
 
         <p .something #{what}>
 
