@@ -48,4 +48,4 @@ let g:hamlet_highlight_trailing_space = 0
 
 Embedded hamlet in a haskell source file:
 
-![Screenshot](http://files.pbrisbin.com/screenshots/desktop_1202101148.png)
+![Screenshot](screenshot.png)
