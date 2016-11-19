@@ -5,6 +5,9 @@
 body
   color:     #ffffff
   font-size: 200%
+  @font-face {
+    src: url(...)
+  }
 
 a:link
   font-size:        200%
@@ -22,3 +25,7 @@ a:link
 ##{myId "someid"}
   height: 12px
   width:  100%
+
+div
+  opacity: 0.5
+  transition: width 2s
