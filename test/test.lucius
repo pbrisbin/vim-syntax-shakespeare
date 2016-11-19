@@ -6,6 +6,10 @@
 
   body { font: 'Helvetica'; }
 
+/* Issue #18 */
+
+  span.something_else { font: "#{myFont}" }
+
 /* Interpolation: */
 
   div#something { background: url(@{RouteR foo}) repeat 10 10; }
