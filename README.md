@@ -28,3 +28,7 @@ let g:hamlet_highlight_trailing_space = 0
 Embedded hamlet in a haskell source file:
 
 ![Screenshot](screenshot.png)
+
+---
+
+[LICENSE](./LICENSE)
