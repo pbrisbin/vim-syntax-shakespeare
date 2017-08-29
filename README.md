@@ -5,21 +5,11 @@ templating languages used by Yesod.
 
 [shakespeare]: http://hackage.haskell.org/package/shakespeare
 
-Provided is each `syntax/$language.vim` file for external templates as
-well as an `after/syntax/haskell.vim` which will properly highlight
-quasi-quoted blocks inside a haskell source file.
-
 ## Installation
 
-- Use [Vundle][]
-- Add `Plugin 'pbrisbin/vim-syntax-shakespeare'`
-
-[vundle]: https://github.com/gmarik/Vundle.vim
+Add `pbrisbin/vim-syntax-shakespeare` using your preferred plugin manager.
 
 ## Options
-
-The following options can be added to your `~/.vimrc` in order to
-to change the behaviour of this plugin.
 
 Allow one-liner QQs even if they have invalid nesting:
 
@@ -32,17 +22,6 @@ Don't highlight empty space at the end of lines:
 ```vim
 let g:hamlet_highlight_trailing_space = 0
 ```
-
-### Todo
-
-* javascript inside a script tag is difficult due to the lack of a
-  \</script> region-end
-
-* highlight in-line html tags added as raw
-
-* nested blocks in lucius
-
-* bug in lucius unquoted interpolations
 
 ### Screenshots
 
