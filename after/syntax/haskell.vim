@@ -4,8 +4,10 @@
 " License:  MIT
 
 " store and remove current syntax value
-let old_syntax = b:current_syntax
-unlet b:current_syntax
+if exists('b:current_syntax')
+  let old_syntax = b:current_syntax
+  unlet b:current_syntax
+endif
 
 syn include @hamlet syntax/hamlet.vim
 unlet b:current_syntax
@@ -51,4 +53,6 @@ HiLink txtNum         Number
 delcommand HiLink
 
 " restore current syntax value
-let b:current_syntax = old_syntax
+if exists('old_syntax')
+  let b:current_syntax = old_syntax
+endif
